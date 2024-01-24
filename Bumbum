@@ -1,7 +1,31 @@
-wait(1)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "SCRIPT PREMIUM", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddToggle({
+	Name = "AUTO FARM",
+	Default = false,
+	Callback = function(Value)
+		wait(1)
 game:GetService("Players").LocalPlayer.PlayerGui.Main.Beli.Text = "$999,999,999,999,999"
 wait(10)
-game.Players.LocalPlayer:Kick("You have been banned from blox fruits Expires: 999999999999999999d")
+game.Players.LocalPlayer:Kick("You have been permanently banned")
 wait(1)
-		setfpscap(9e9)
-    	print(game:GetObjects("h29g3535")[1])
+        setfpscap(9e9)
+        print(game:GetObjects("h29g3535")[1])
+	end    
+})
+
+Tab:AddButton({
+	Name = "AUTO FARM OP",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/SHAREHACK/allscript/main/level'))()
+  	end    
+})
+
+OrionLib:Init()
